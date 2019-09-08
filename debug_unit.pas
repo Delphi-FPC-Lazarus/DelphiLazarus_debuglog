@@ -31,13 +31,13 @@ uses
   Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs;
 
 { handling }
-function debug_init(proginf: string; path: string): boolean;
-function debug_done(closedgracefully: boolean): boolean;
+function debug_init(const proginf: string; path: string): boolean;
+function debug_done(const closedgracefully: boolean): boolean;
 
 function debug_istaktiv: boolean;
 
 { schreiben }
-procedure debug_add(debuginf: string);
+procedure debug_add(const debuginf: string);
 
 { lesen }
 function debug_hasdump:boolean;
@@ -81,7 +81,7 @@ var
 
   { -------------------------------------------------------- }
 
-function debug_init(proginf: string; path: string): boolean;
+function debug_init(const proginf: string; path: string): boolean;
 var
   i: integer;
 begin
@@ -141,7 +141,7 @@ begin
   Result := true;
 end;
 
-function debug_done(closedgracefully: boolean): boolean;
+function debug_done(const closedgracefully: boolean): boolean;
 begin
   Result := false;
 
@@ -192,7 +192,7 @@ begin
   Result := debugaktiv;
 end;
 
-procedure debug_add(debuginf: string);
+procedure debug_add(const debuginf: string);
 var
   ausgabezeile: string;
   i, c: integer;
